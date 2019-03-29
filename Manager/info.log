@@ -1,0 +1,8 @@
+-DEBUG-2019/03/23 13:32:01,234-com.zhangliang.service.impl.UserServiceImpl.checkUserLoginService(UserServiceImpl.java:21)-21-张三发起登录请求
+-DEBUG-2019/03/23 13:32:01,918-com.zhangliang.service.impl.UserServiceImpl.checkUserLoginService(UserServiceImpl.java:25)-25-张三登录成功
+-DEBUG-2019/03/23 13:33:28,186-com.zhangliang.service.impl.UserServiceImpl.userShowService(UserServiceImpl.java:49)-49-显示所有用户信息：[User [uid=1, uname=张三, pwd=666, sex=1, age=18, birth=2000-10-10], User [uid=2, uname=李四, pwd=123, sex=1, age=18, birth=2000-10-10], User [uid=3, uname=zhangsan, pwd=123, sex=1, age=18, birth=2000-10-10]]
+-DEBUG-2019/03/23 13:33:50,011-com.zhangliang.service.impl.UserServiceImpl.userChangePwdService(UserServiceImpl.java:35)-35-1:发起修改密码请求
+-DEBUG-2019/03/23 13:33:50,102-com.zhangliang.service.impl.UserServiceImpl.userChangePwdService(UserServiceImpl.java:38)-38-1:密码修改成功
+-DEBUG-2019/03/23 13:38:07,905-com.zhangliang.service.impl.UserServiceImpl.checkUserLoginService(UserServiceImpl.java:21)-21-张亮发起登录请求
+-DEBUG-2019/03/23 13:38:07,948-com.zhangliang.service.impl.UserServiceImpl.checkUserLoginService(UserServiceImpl.java:25)-25-张亮登录成功
+-DEBUG-2019/03/23 13:38:26,942-com.zhangliang.service.impl.UserServiceImpl.userShowService(UserServiceImpl.java:49)-49-显示所有用户信息：[User [uid=1, uname=张三, pwd=123, sex=1, age=18, birth=2000-10-10], User [uid=2, uname=李四, pwd=123, sex=1, age=18, birth=2000-10-10], User [uid=3, uname=zhangsan, pwd=123, sex=1, age=18, birth=2000-10-10], User [uid=4, uname=夏珍珍, pwd=164622, sex=0, age=23, birth=1997-06-16], User [uid=5, uname=张亮, pwd=980314, sex=1, age=22, birth=2019-03-05]]
