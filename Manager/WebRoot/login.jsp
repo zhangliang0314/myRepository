@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -41,37 +43,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="loginbody">
 	    <span class="systemlogo"></span> 
 	    <br />
-	    <%
-	    	//声明java代码块进行错误提示语的逻辑校验
-	    	Object obj=request.getAttribute("flag");
-	    	if(obj!=null){
-	    %>
-		    <div style="text-align: center;">
-		     <span style="font-size: 15px;color:darkred;font-weight: bold;">用户名或者密码错误</span>
-		    </div>
-	    <%} %>
-	   <%
-	    	//声明java代码块进行密码修改提示语
-	    	Object pwd=session.getAttribute("pwd");
-	    	if(pwd!=null){
-	    %>
-		    <div style="text-align: center;">
-		     <span style="font-size: 15px;color:darkred;font-weight: bold;">密码修改成功</span>
-		    </div>
-	    <%}
-	    	session.removeAttribute("pwd");
-	    %>
-	       <%
-	    	//声明java代码块进行注册提示语
-	    	Object reg=session.getAttribute("reg");
-	    	if(reg!=null){
-	    %>
-		    <div style="text-align: center;">
-		     <span style="font-size: 15px;color:darkred;font-weight: bold;">注册成功</span>
-		    </div>
-	    <%}
-	    	session.removeAttribute("reg");
-	    %>
+	    <c:choose>
+	    	<c:when test="${flag==0}">
+	    		<div style="text-align: center;">
+		     		<span style="font-size: 15px;color:darkred;font-weight: bold;">用户名或者密码错误</span>
+		   	    </div>
+	    	</c:when>
+	    	<c:when test="${flag==1}">
+	    		<div style="text-align: center;">
+		     		<span style="font-size: 15px;color:darkred;font-weight: bold;">密码修改成功</span>
+		   	    </div>
+	    	</c:when>
+	    	<c:when test="${flag==2}">
+	    		<div style="text-align: center;">
+		     		 <span style="font-size: 15px;color:darkred;font-weight: bold;">注册成功</span>
+		   	    </div>
+	    	</c:when>
+	    </c:choose>
+	    <c:remove var="flag" scope="session"/>
 	 <div class="loginbox loginbox1">
 	    <form action="user" method="post">
 	    	<input type="hidden" name="oper" value="login" />
