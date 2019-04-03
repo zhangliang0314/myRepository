@@ -1,4 +1,6 @@
-<%@ page language="java" import="java.util.*,com.zhangliang.pojo.*" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -47,7 +49,8 @@ $(function(){
     </ul>
      
     <div class="user">
-    <span><%=((User)session.getAttribute("user")).getUname()%></span>
+    <span>${sessionScope.user.uname }</span>
+    <span>当前在线人数:${applicationScope.count}</span>
     </div>    
     
     </div>
